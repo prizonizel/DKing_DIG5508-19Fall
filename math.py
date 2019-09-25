@@ -20,3 +20,7 @@ def difference_numbers(x,y):
     else:
         return y-x
 
+import math
+
+def pythagorean_numbers(x,y):
+    return math.sqrt((x**2)+(y**2))
