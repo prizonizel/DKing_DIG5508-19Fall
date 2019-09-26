@@ -1,10 +1,11 @@
 def plusone(x):
     return x+1
 
-def increment(x):
+def increment_three_times(x):
     return plusone(plusone(plusone(x)))
 
-y=0
-print(y)
-y=increment(y)
-print(y)
+def exponent(x,y):
+    z=x
+    for n in range(1,y):
+        z=z*x
+    return z
