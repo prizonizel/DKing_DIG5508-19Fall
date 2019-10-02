@@ -1,4 +1,4 @@
-
+#%%
 def add_numbers(x,y):
     return x+y
 
@@ -24,3 +24,6 @@ import math
 
 def pythagorean_numbers(x,y):
     return math.sqrt((x**2)+(y**2))
+
+
+#%%
