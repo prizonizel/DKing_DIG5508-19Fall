@@ -48,12 +48,16 @@
 
 # ON YOUR OWN: Type an example value for each of the four types of values in this cell below each comment: 
 # string
+# 'Wasssuuuuup!'
 
 # int
+# 999
 
 # float
+# 9.99
 
 # bool
+# True
 
 #%% [markdown]
 
@@ -73,7 +77,7 @@ type(5) # Will print the "int" to the console.
 a = 5
 #%% 
 # If you enter a variable without first defining it, you will receive a NameError:
-b
+b = 999
 
 #%%
 
@@ -97,9 +101,14 @@ a = 6
 print(a)
 #%% [markdown]
 # *ON YOUR OWN:* Add additional lines of code below that assign and then print the value of a with the following values:
-# - "Hello World"
-# - 42.0 
-# - True
+a = "Hello World"
+print(a)
+a = 42.0
+print(a) 
+a = True
+print(a)
+
+
 
 #%% [markdown]
 
@@ -166,6 +175,10 @@ print(3+return_four())
 # called "exclaim", and use it to concatenate the returned value to the string
 # "Hello World" in a print statement.
 
+def exclaim():
+    return '!'
+print('Hello World' + exclaim())
+
 #%% [markdown]
 # ## Parameters and Arguments
 # A *parameter* is the local variable that is associated with a function. The
@@ -181,8 +194,8 @@ f1(1) # 1 is passed in as an argument to the function, and is bound to the local
 # *ON YOUR OWN:* In this cell, Modify the function `multiply_2` to accept two
 # arguments and returns the result of multiplying them together. You may name
 # the arguments anything you want
-def multiply_2():
-    return
+def multiply_2(x,y):
+    return x*y
 
 #%% [markdown]
 # # Conditionals and Tests
@@ -230,6 +243,14 @@ compare_with_3(4)
 # 3 is equal to 3
 # compare(10,3) 
 # 10 is greater than 3
+
+def compare(x,y):
+    if x < y:
+        print(str(x) + " is less than " + str(y))
+    elif x > y:
+        print(str(x) + " is greater than " + str(y))
+    else:
+        print(str(x) + " is equal to " + str(y))
 
 #%% [markdown]
 # # Scope
@@ -324,3 +345,12 @@ print(random.randint(2,100))
 #
 # The function should accept a single argument. For instance, sum_random(2)
 # would sum two numbers between 1 and 100: 34 and 16 and return the value 50.
+import random
+def sum_random(x):
+    sum = 0
+    for n in range(1,x+1):
+        sum = sum + random.randint(1,100)
+    return sum
+
+
+#%%
