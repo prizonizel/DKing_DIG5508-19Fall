@@ -348,6 +348,7 @@ print(random.randint(2,100))
 
 #%%
 # I modified the program to display a list of the generated numbers before the sum.
+# It's much easier to tell whether the function is working this way.
 import random
 def sum_random(x):
     sum = 0
@@ -356,7 +357,7 @@ def sum_random(x):
         rando = random.randint(1,100)
         sum = sum + rando
         all = all + [rando]
-    all = all +[sum]
+    all = all +['sum: '+str(sum)]
     return all
 
 
