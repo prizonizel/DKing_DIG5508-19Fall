@@ -345,12 +345,19 @@ print(random.randint(2,100))
 #
 # The function should accept a single argument. For instance, sum_random(2)
 # would sum two numbers between 1 and 100: 34 and 16 and return the value 50.
+
+#%%
+# I modified the program to display a list of the generated numbers before the sum.
 import random
 def sum_random(x):
     sum = 0
+    all = []
     for n in range(1,x+1):
-        sum = sum + random.randint(1,100)
-    return sum
+        rando = random.randint(1,100)
+        sum = sum + rando
+        all = all + [rando]
+    all = all +[sum]
+    return all
 
 
 #%%
