@@ -347,18 +347,14 @@ print(random.randint(2,100))
 # would sum two numbers between 1 and 100: 34 and 16 and return the value 50.
 
 #%%
-# I modified the program to display a list of the generated numbers before the sum.
-# It's much easier to tell whether the function is working this way.
+
 import random
 def sum_random(x):
     sum = 0
-    all = []
     for n in range(1,x+1):
         rando = random.randint(1,100)
         sum = sum + rando
-        all = all + [rando]
-    all = all +['sum: '+str(sum)]
-    return all
+    return sum
 
 
 #%%
