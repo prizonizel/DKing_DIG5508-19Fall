@@ -8,7 +8,7 @@ Gutenberg
 
 2-1: I loaded in the text for Huckleberry Finn
 
-2-2: I applied the code that finds the longest sentence, but I don't know how to set it up to find the top 5.
+2-2: UPDATED -- I used the tuples_and_sorting tutorial, and I think I have this working.
 
 2-3: I don't know how to do this one, because the code for getting word counts only returns a list of word with the number 1 next to them.
 
