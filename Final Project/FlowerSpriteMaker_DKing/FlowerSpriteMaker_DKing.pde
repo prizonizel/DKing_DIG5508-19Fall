@@ -1,25 +1,84 @@
 /*
 Daniel King's DIG5508 Final Project
-
-In my game Field of Cures,
-flower objects are displayed with three sprites layered on top of each other:
--one layer of petals,
--another layer of petals out of phase with the first,
--and the center of the flower, where the pollen is.
-
-The number of petals ranges from 6 to 16
-(3 to 8 in each layer of petals).
-
-I drew these layers by hand to make placeholder graphics,
-but now I want to procedurally generate graphics that look better.
-
-The output will be 18 image files:
-3 layers for 6 types of flowers.
-
-The GOAL is to make my flowers look GOOD!
-
-In order to do this, I will first have to sketch each flower in Processing.
-
-When I am happy with each design, I will then save the generative code
-into a program that will save out each layer of each design.
 */
+
+void setup() {
+  size(50, 50);
+  smooth();
+  frameRate(1);
+}
+
+void draw() {
+
+// Initialize variables
+color petalcolor = #ffffff;
+int petalnumber;
+int petallength = 26;
+int petalwidth;
+int petaldistance = -11;
+int centerwidth = 16;
+float petalrotation;
+String spritename;
+int spritenumber = 0;
+stroke(153);
+
+// Set center point
+translate(width/2, height/2);
+
+for (int n = 0; n < 6; n++) {
+  
+  // Increment sprite number and number of petals
+  spritenumber = spritenumber + 1;
+  petalnumber = spritenumber + 2;
+  
+  petalwidth = 23 - (petalnumber * 2);
+  petalrotation = 360 / petalnumber;
+
+  // Paint background
+  background(#000000);
+  
+  // Turn canvas to get flower's best angle
+  rotate(radians(petalrotation / 5));
+  
+  // Draw first layer of petals, rotating after each one
+  fill(petalcolor);
+  for (int i = 0; i < petalnumber; i++) {
+    ellipse(0, petaldistance, petalwidth, petallength);
+    rotate(radians(petalrotation));
+  }
+  
+  // Save file for first layer
+  spritename = "spr_flower"+spritenumber+"a.png";
+  save(spritename);
+  
+  // Offset the layers
+  rotate(radians(petalrotation / 2));
+  
+  // Paint background
+  background(#000000);
+  
+  // Draw second layer of petals, rotating after each one
+  fill(petalcolor);
+  for (int i = 0; i < petalnumber; i++) {
+    ellipse(0, petaldistance, petalwidth, petallength);
+    rotate(radians(petalrotation));
+  }
+  
+  // Save file for second layer
+  spritename = "spr_flower"+spritenumber+"b.png";
+  save(spritename);
+
+}
+
+// Paint background
+background(#000000);
+
+// Draw center circle
+stroke(#000000);
+fill(#FFFF00); // yellow
+ellipse(0, 0, centerwidth, centerwidth);
+
+// Save file for center circle
+save("spr_flower_center.png");
+
+}

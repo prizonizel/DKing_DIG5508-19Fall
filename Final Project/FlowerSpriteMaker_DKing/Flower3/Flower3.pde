@@ -11,7 +11,7 @@ background(#800080);
 // Initialize variables
 color petalcolor1 = #ffffff;
 color petalcolor2 = #ffffff;
-int petalnumber = 3;
+int petalnumber = 5;
 int petallength = 26;
 int petalwidth = 23 - (petalnumber * 2);
 int petaldistance = -11;
